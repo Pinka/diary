@@ -15,6 +15,7 @@ const DateSelector: React.FC<{
         Date
       </label>
       <input
+        className="p-1"
         type="date"
         title="Select Date"
         name="date"

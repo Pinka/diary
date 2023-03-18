@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         <Login />
         {isAuthenticated ? (
           <>
-            <h1 className="mb-4 text-3xl font-bold">Diary</h1>
+            <h1 className="mt-2 mb-4 text-3xl font-bold">My Diary</h1>
             <DateSelector selectedDate={date} onChange={setDate} />
 
             <form key={date} className="mt-4 flex flex-col" onSubmit={onSubmit}>
@@ -55,10 +55,11 @@ const Home: NextPage = () => {
                 name="content"
                 title="Content"
                 defaultValue={post.data?.content}
+                rows={5}
               />
               <button
                 type="submit"
-                className="rounded-full bg-black/10 px-10 py-3 font-semibold no-underline transition hover:bg-black/20"
+                className="rounded-sm bg-black/10 px-6 py-2 font-semibold no-underline transition hover:bg-black/20"
                 disabled={savePost.isLoading}
               >
                 {savePost.isLoading ? "Saving..." : "Save"}
@@ -86,14 +87,14 @@ const Login: React.FC = () => {
       <p className="text-2x">
         {sessionData && (
           <span>
-            Hello{" "}
+            Hello,{" "}
             <span className="whitespace-nowrap">{sessionData.user?.name}</span>
           </span>
         )}
       </p>
       <button
         type="button"
-        className="rounded-full bg-black/10 px-10 py-3 font-semibold no-underline transition hover:bg-black/20"
+        className="rounded-sm bg-black/10 px-6 py-2 font-semibold no-underline transition hover:bg-black/20"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
         {sessionData ? "Sign out" : "Sign in"}
