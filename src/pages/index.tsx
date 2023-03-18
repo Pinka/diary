@@ -37,7 +37,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Diary</title>
+        <title>My Diary</title>
       </Head>
       <main className="mx-auto max-w-md p-4">
         <Login />

@@ -11,13 +11,16 @@ const DateSelector: React.FC<{
 
   return (
     <div className="date-selector">
-      <label htmlFor="date">Date</label>
+      <label htmlFor="date" className="sr-only">
+        Date
+      </label>
       <input
         type="date"
         title="Select Date"
         name="date"
         value={selectedDate}
         onChange={handleDateChange}
+        max={new Date().toISOString().slice(0, 10)}
       />
     </div>
   );
