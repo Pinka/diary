@@ -83,8 +83,13 @@ const Login: React.FC = () => {
 
   return (
     <div className="flex flex-row items-center justify-between gap-4">
-      <p className="text-2x text-center">
-        {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
+      <p className="text-2x">
+        {sessionData && (
+          <span>
+            Hello{" "}
+            <span className="whitespace-nowrap">{sessionData.user?.name}</span>
+          </span>
+        )}
       </p>
       <button
         type="button"
